@@ -38,7 +38,7 @@ class GuzzleClient implements ClientInterface
 
         // Get the Guzzle request and response objects.
         $client = $this->getClient();
-        $request = $this->getRequest();
+        $request = $this->getGuzzleRequest();
 
         // Ready, aim, fire that bad boy.
         $response = $client->send($request);
@@ -84,7 +84,7 @@ class GuzzleClient implements ClientInterface
      * @return Request
      * Gets a new instance of GuzzleHttp\Request
      */
-    private function getRequest() : Request
+    private function getGuzzleRequest() : Request
     {
         return new Request(
             $this->request->getRequestMethod(),
