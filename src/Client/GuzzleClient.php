@@ -4,10 +4,9 @@ namespace Union\Nucleus\Client;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
-
-use Union\Nucleus\Exception\NucleusClientException;
 use Union\Nucleus\Request\RequestInterface;
 use Union\Nucleus\Response\ResponseInterface;
+use Union\Nucleus\Exception\NucleusClientException;
 
 /**
  * Class GuzzleClient
@@ -17,7 +16,6 @@ use Union\Nucleus\Response\ResponseInterface;
  */
 class GuzzleClient implements ClientInterface
 {
-
     private $request;
     private $response;
 
@@ -35,7 +33,6 @@ class GuzzleClient implements ClientInterface
      */
     public function send() : ResponseInterface
     {
-
         // Get the Guzzle request and response objects.
         $client = $this->getClient();
         $request = $this->getRequest();
@@ -47,15 +44,15 @@ class GuzzleClient implements ClientInterface
         $statusCode = $response->getStatusCode();
 
         // Better make sure it came back correctly.
-        if($statusCode !== 200) {
+        if ($statusCode !== 200) {
             throw new NucleusClientException("$statusCode response received.");
         }
 
         // Let's setup the response.
-        $this->response->setStatusCode( $statusCode );
+        $this->response->setStatusCode($statusCode);
 
         // Note: The Response object should validate and format the response when building the body.
-        $this->response->setBody( (string)$response->getBody() );
+        $this->response->setBody((string)$response->getBody());
 
         // Returning the response so that consumers can further manipulate if needed.
         return $this->response;
@@ -92,7 +89,4 @@ class GuzzleClient implements ClientInterface
             $this->request->getBody()
         );
     }
-
-
-
 }

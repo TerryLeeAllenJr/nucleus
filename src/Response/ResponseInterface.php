@@ -4,7 +4,6 @@ namespace Union\Nucleus\Response;
 
 interface ResponseInterface
 {
-
     public function getBody();
 
     public function getStatusCode() : int;
@@ -16,5 +15,4 @@ interface ResponseInterface
     public function setBody(string $body) : void;
 
     public function setStatusCode($statusCode) : void;
-
 }

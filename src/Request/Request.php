@@ -42,15 +42,15 @@ abstract class Request
     private function verifyEnvironment() : void
     {
 
-        if( !getenv('RAISERVICE_BASE_URL') ) {
+        if (!getenv('RAISERVICE_BASE_URL')) {
             throw new NucleusException('RAISERVICE_BASE_URL has not been set in the environment.');
         }
 
-        if( !getenv('RAISERVICE_AUTH_USER') ) {
+        if (!getenv('RAISERVICE_AUTH_USER')) {
             throw new NucleusException('RAISERVICE_AUTH_USER has not been set in the environment.');
         }
 
-        if( !getenv('RAISERVICE_AUTH_PASSWORD') ) {
+        if (!getenv('RAISERVICE_AUTH_PASSWORD')) {
             throw new NucleusException('RAISERVICE_AUTH_PASSWORD has not been set in the environment.');
         }
     }

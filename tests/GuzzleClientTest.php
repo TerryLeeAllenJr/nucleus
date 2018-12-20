@@ -1,6 +1,5 @@
 <?php
 
-
 use PHPUnit\Framework\TestCase;
 use Union\Nucleus\Request\RequestInterface;
 use Union\Nucleus\Response\ResponseInterface;
@@ -13,10 +12,9 @@ use Union\Nucleus\Response\ResponseInterface;
  *
  *  @author Lee Allen
  */
+
 class GuzzleClientTest extends TestCase
 {
-
-
     public function testIsThereAnySyntaxError()
     {
         $this->setEnv();
@@ -24,7 +22,7 @@ class GuzzleClientTest extends TestCase
         $request  = $this->createRequestStub();
         $response = $this->createResponseStub();
 
-        $var = new Union\Nucleus\Client\GuzzleClient($request,$response);
+        $var = new Union\Nucleus\Client\GuzzleClient($request, $response);
         $this->assertTrue(is_object($var));
 
         unset($var);
@@ -81,7 +79,6 @@ class GuzzleClientTest extends TestCase
         return $method->invokeArgs($object, $parameters);
     }
 
-
     /**
      * Sets the required environment varialbes.
      */
@@ -101,7 +98,4 @@ class GuzzleClientTest extends TestCase
         putenv('RAISERVICE_AUTH_USER');
         putenv('RAISERVICE_AUTH_PASSWORD');
     }
-
-
-
 }

@@ -11,5 +11,4 @@ class NucleusClientException extends NucleusException
     {
         parent::__construct($message, $code, $previous);
     }
-
 }
