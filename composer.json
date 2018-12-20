@@ -1,0 +1,26 @@
+{
+    "name": "unionco/nucleus",
+    "description": "Core package for UNION / RJR Integration",
+    "keywords": ["union", "rjr", "package"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lee Allen",
+            "email": "lee.allen@union.co"
+        }
+    ],
+    "type": "library",
+    "require": {
+		"php": ">=7.1",
+        "ramsey/uuid": "^3.8",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+		"phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Union\\Nucleus\\": "src/"
+        }
+    }
+}
